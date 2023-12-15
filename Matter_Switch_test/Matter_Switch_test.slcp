@@ -1,0 +1,50 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: Matter_Switch_test
+label: Matter_Switch_test
+description: |
+  This example project shows an empty configuration that can be used as a starting point to add components and functionality.
+category: Example|Platform
+filter:
+- name: Device Type
+  value: [SoC]
+- name: MCU
+  value: [32-bit MCU]
+- name: Project Difficulty
+  value: [Beginner]
+package: platform
+quality: production
+source:
+- {path: app.cpp}
+- {path: main.cpp}
+include:
+- path: ''
+  file_list:
+  - {path: app.h}
+sdk: {id: gecko_sdk, version: 4.3.2}
+toolchain_settings: []
+component:
+- {from: matter, id: matter_platform_efr32}
+- {id: brd2601b}
+- {from: matter, id: matter_thread_cli}
+- {from: matter, id: matter_localization_configuration}
+- {from: matter, id: matter_ble}
+- {from: matter, id: matter_basic}
+- {from: matter, id: matter_network_commissioning}
+- {id: sl_system}
+- {from: matter, id: matter_switch}
+- {from: matter, id: matter_thread_ftd}
+- {from: matter, id: matter_ota_requestor}
+- {id: EFR32MG24B310F1536IM48}
+- {from: matter, id: matter_gatt}
+- {id: zigbee_zcl_framework_core}
+- {id: device_init}
+- {from: matter, id: matter_configuration_over_swo}
+- {from: matter, id: matter_ota_support}
+- {id: cpp_support}
+- {from: matter, id: matter_shell}
+define:
+- {name: DEBUG_EFM}
+ui_hints: {}
+sdk_extension:
+- {id: matter, version: 2.1.1}
+
